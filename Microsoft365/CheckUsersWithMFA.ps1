@@ -6,8 +6,15 @@ Param(
     [string]$Password
 )
 
-# Initialize variables
-$ExportCSV = ".\MFAReport_$((Get-Date -format 'yyyy-MMM-dd hh-mm tt')).csv"
+# Define the path for the 'Results' folder
+$ResultsFolder = ".\Results"
+$ExportCSV = "$ResultsFolder\MFAReport_$((Get-Date -format 'yyyy-MMM-dd hh-mm tt')).csv"
+
+# Create the 'Results' folder if it doesn't exist
+if (-not (Test-Path -Path $ResultsFolder)) {
+    New-Item -ItemType Directory -Path $ResultsFolder
+}
+
 $Results = @()
 
 # Loop through each user and gather MFA information
@@ -31,4 +38,4 @@ Get-MsolUser -All | ForEach-Object {
 
 # Export results to CSV
 $Results | Export-Csv -Path $ExportCSV -NoTypeInformation
-Write-Host
+Write-Host "Report generated at $ExportCSV"
