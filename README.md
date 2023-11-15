@@ -21,7 +21,7 @@ Each script comes with complete documentation detailing its purpose, usage instr
 
 ```
 $ git clone https://github.com/gmamorim/pwsh-scripts.git
-$ cd M365-CloudAdminScripts
+$ cd pwsh-scripts
 ```
 
 ## Connect with Me
