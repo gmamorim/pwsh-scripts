@@ -2,7 +2,7 @@
 # PowerShell script to create distribution groups from a corrected CSV file
 
 # Path to the CSV file
-$csvPath = "ExchangeOnline\AllGroups-MailAndDisplayName.csv"
+$csvPath = "<Insert the path for your csv>"
 
 # Read the CSV file
 $groups = Import-Csv $csvPath
