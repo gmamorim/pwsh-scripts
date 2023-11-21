@@ -1,8 +1,8 @@
 # Define the path of the input CSV file
-$inputCsvPath = "C:\path\to\your\MailUsers.csv"
+$inputCsvPath = "C:\path\to\MailUsers.csv"
 
 # Define the path of the output CSV file
-$outputCsvPath = "C:\path\to\your\output.csv"
+$outputCsvPath = "C:\path\to\output.csv"
 
 # Import the CSV, process each record, and select the required properties
 $processedData = Import-Csv -Path $inputCsvPath | ForEach-Object {
